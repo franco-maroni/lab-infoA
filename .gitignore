@@ -33,6 +33,8 @@
 *.su
 
 # Xcode
+*.pbxproj
+*.xcodeproj
 .DS_Store
 */build/*
 *.pbxuser
