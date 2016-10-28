@@ -11,18 +11,16 @@
 #include <stdio.h>
 
 int main(void) {
-    int n, i, max, min, cur;
+    int n, i, max = 0, min = 0, cur;
     
     do {
         printf("Inserire valore di N:\n");
-        scanf("%d%*c", &n);
+        scanf("%d", &n);
     } while ( n < 1 );
     
-    max = 0;
-    min = 0;
     for(i = 0; i < n; i++) { // ripeto n volte
         printf("Inserire valore numero %d:\n", i + 1);
-        scanf("%d%*c", &cur); 
+        scanf("%d", &cur); 
         if (i == 0) { //alla prima iterazione, assegno lo stesso valore a max e min
             min = cur;
             max = cur;

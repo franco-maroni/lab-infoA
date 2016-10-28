@@ -10,7 +10,7 @@ int main(void) {
     int n, i, fact;
     do {
         printf("Inserire un valore intero positivo:\n");
-        scanf("%d%*c", &n);
+        scanf("%d", &n);
     } while (n < 1);
 
     

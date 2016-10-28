@@ -13,10 +13,10 @@ int main(void){
     int a, b;
     
     printf("Inserire valore di A:\n");
-    scanf("%d%*c", &a);
+    scanf("%d", &a);
     
     printf("Inserire valore di B:\n");
-    scanf("%d%*c", &b);
+    scanf("%d", &b);
     
     printf("Valori inseriti \n A: %d , B: %d \n", a,b);
 

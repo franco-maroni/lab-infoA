@@ -23,7 +23,7 @@ int main(void) {
     
     do {
         printf("Inserire intero positivo:\n");
-        scanf("%d%*c", &n);
+        scanf("%d", &n);
     } while (n <= 0);
     
     for(i = 0; i < n; i++) {

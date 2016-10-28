@@ -11,59 +11,66 @@
 
 int main(void) {
     int scelta;
+    typedef enum {
+        QUADRATO=1,
+        TRIANGOLO_EQUILATERO,
+        CERCHIO,
+        RETTANGOLO,
+        TRIANGOLO_RETTANGOLO
+    } Forma;
     float lato, base, altezza, raggio, area, perimetro, rad_3_4, ipotenusa;
     do {
-        printf("Selezionare la forma geometrica:\n1->Quadrato\n2->Triangolo Equilatero\n3->Cerchio\n4->Rettangolo\n5->Triangolo Rettangolo\n");
-        scanf("%d", &scelta);
-    } while (scelta < 1 || scelta > 5);
+        printf("Selezionare la forma geometrica:\n%d->Quadrato\n%d->Triangolo Equilatero\n%d->Cerchio\n%d->Rettangolo\n%d->Triangolo Rettangolo\n", QUADRATO, TRIANGOLO_EQUILATERO, CERCHIO, RETTANGOLO, TRIANGOLO_RETTANGOLO);
+        scanf("%d%*c", &scelta);
+    } while (scelta < QUADRATO || scelta > TRIANGOLO_RETTANGOLO);
     
     
     switch (scelta) {
-        case 1: // quadrato
+        case QUADRATO: // quadrato
             do {
                 printf("Hai scelto il quadrato\nInserire la misura del lato\n");
-                scanf("%f", &lato);
+                scanf("%f%*c", &lato);
             } while (lato < 0);
             area = lato * lato;
             perimetro = 4 * lato;
             break;
-        case 2: //trangolo equilatero
+        case TRIANGOLO_EQUILATERO: //trangolo equilatero
             do {
                 printf("Hai scelto il Triangolo equilatero\nInserire la misura del lato\n");
-                scanf("%f", &lato);
+                scanf("%f%*c", &lato);
             } while (lato < 0);
             rad_3_4 = sqrt(3) / 4 ; // valore che serve per calcolare l'area del triangolo equilatero dato il lato
             area = lato * lato * rad_3_4;
             perimetro = 3 * lato;
             break;
-        case 3: //cerchio
+        case CERCHIO: //cerchio
             do {
                 printf("Hai scelto il Cerchio\nInserire la misura del raggio\n");
-                scanf("%f", &raggio);
+                scanf("%f%*c", &raggio);
             } while (raggio < 0);
             area = (raggio * raggio) * M_PI; // il valore del Pi Greco è definito in math.h come M_PI
             perimetro = 2 * raggio * M_PI;
             break;
-        case 4: //rettangolo
+        case RETTANGOLO: //rettangolo
             do {
                 printf("Hai scelto il rettangolo\nInserire la misura della base\n");
-                scanf("%f", &base);
+                scanf("%f%*c", &base);
                 printf("Inserire la misura dell'altezza\n");
-                scanf("%f", &altezza);
+                scanf("%f%*c", &altezza);
             } while (base < 0 || altezza < 0);
             area = base * altezza;
             perimetro = 2 * (base + altezza);
             break;
 
-        case 5: //triangolo rettangolo
+        case TRIANGOLO_RETTANGOLO: //triangolo rettangolo
             do {
                 printf("Hai scelto il Triangolo Rettangolo\nInserire la misura della base\n");
                 scanf("%f", &base);
                 printf("Inserire la misura dell'altezza\n");
-                scanf("%f", &altezza);
+                scanf("%f%*c", &altezza);
             } while (base < 0 || altezza < 0);
             area = base * altezza / 2;
-            ipotenusa = sqrtf(pow(base, 2) + pow(altezza, 2));
+            ipotenusa = sqrt(pow(base, 2) + pow(altezza, 2));
             perimetro = base + altezza + ipotenusa;
             break;
         default: // dato che effettuo il controllo sull'inut nel primo do-while, non dovrei mai ricadere nel caso default
