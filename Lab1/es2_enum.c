@@ -21,7 +21,7 @@ int main(void) {
     float lato, base, altezza, raggio, area, perimetro, rad_3_4, ipotenusa;
     do {
         printf("Selezionare la forma geometrica:\n%d->Quadrato\n%d->Triangolo Equilatero\n%d->Cerchio\n%d->Rettangolo\n%d->Triangolo Rettangolo\n", QUADRATO, TRIANGOLO_EQUILATERO, CERCHIO, RETTANGOLO, TRIANGOLO_RETTANGOLO);
-        scanf("%d%*c", &scelta);
+        scanf("%d", &scelta);
     } while (scelta < QUADRATO || scelta > TRIANGOLO_RETTANGOLO);
     
     
@@ -29,7 +29,7 @@ int main(void) {
         case QUADRATO: // quadrato
             do {
                 printf("Hai scelto il quadrato\nInserire la misura del lato\n");
-                scanf("%f%*c", &lato);
+                scanf("%f", &lato);
             } while (lato < 0);
             area = lato * lato;
             perimetro = 4 * lato;
@@ -37,7 +37,7 @@ int main(void) {
         case TRIANGOLO_EQUILATERO: //trangolo equilatero
             do {
                 printf("Hai scelto il Triangolo equilatero\nInserire la misura del lato\n");
-                scanf("%f%*c", &lato);
+                scanf("%f", &lato);
             } while (lato < 0);
             rad_3_4 = sqrt(3) / 4 ; // valore che serve per calcolare l'area del triangolo equilatero dato il lato
             area = lato * lato * rad_3_4;
@@ -46,7 +46,7 @@ int main(void) {
         case CERCHIO: //cerchio
             do {
                 printf("Hai scelto il Cerchio\nInserire la misura del raggio\n");
-                scanf("%f%*c", &raggio);
+                scanf("%f", &raggio);
             } while (raggio < 0);
             area = (raggio * raggio) * M_PI; // il valore del Pi Greco è definito in math.h come M_PI
             perimetro = 2 * raggio * M_PI;
@@ -54,9 +54,9 @@ int main(void) {
         case RETTANGOLO: //rettangolo
             do {
                 printf("Hai scelto il rettangolo\nInserire la misura della base\n");
-                scanf("%f%*c", &base);
+                scanf("%f", &base);
                 printf("Inserire la misura dell'altezza\n");
-                scanf("%f%*c", &altezza);
+                scanf("%f", &altezza);
             } while (base < 0 || altezza < 0);
             area = base * altezza;
             perimetro = 2 * (base + altezza);
@@ -67,7 +67,7 @@ int main(void) {
                 printf("Hai scelto il Triangolo Rettangolo\nInserire la misura della base\n");
                 scanf("%f", &base);
                 printf("Inserire la misura dell'altezza\n");
-                scanf("%f%*c", &altezza);
+                scanf("%f", &altezza);
             } while (base < 0 || altezza < 0);
             area = base * altezza / 2;
             ipotenusa = sqrt(pow(base, 2) + pow(altezza, 2));
