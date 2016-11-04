@@ -1,5 +1,36 @@
-//Disegno di quadrati
-
+/*
+Lab 2 Es1.
+Scrivere un programma che legga un numero N ed un carattere C.
+Disegnare per mezzi di * e + il quadrato di lato N come riportato in seguito (caso N=5).
+C == 'f'
+ *****
+ *****
+ *****
+ *****
+ *****
+ 
+C == 'v'
+ *****
+ *   *
+ *   *
+ *   *
+ *****
+ 
+C == 'p'
+ *++++
+ **+++
+ ***++
+ ****+
+ *****
+ 
+C == 'h'
+ *
+ **
+ ***
+ ****
+ *****
+ 
+*/
 #include <stdio.h>
 
 int main(int argc, const char * argv[]) {
@@ -11,7 +42,7 @@ int main(int argc, const char * argv[]) {
     
     printf("Inserire la dimensione del quadrato da disegnare: ");
     scanf("%d%*c",&n);
-    printf("Scegli che quadrato disegnare (f,v,h,p)");
+    printf("Scegli che quadrato disegnare (f,v,p, h)");
     scanf("%c",&c);
     
     
