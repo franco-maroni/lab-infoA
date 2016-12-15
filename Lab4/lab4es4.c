@@ -1,10 +1,10 @@
-//
-//  main.c
-//  lab4es3
-//
-//  Created by Francesco Marconi on 12/11/16.
-//  Copyright © 2016 Francesco Marconi. All rights reserved.
-//
+/*
+ ESERCIZIO 4 (serie di Maclaurin ricorsiva)
+ Si vuole calcolare cos(x) mediante lo sviluppo in serie di Maclaurin di ordine n.
+
+ Scrivere tutte le funzioni ricorsivi necessarie per il calcolo dello sviluppo in serie.
+
+ */
 
 #include <stdio.h>
 #include <math.h>

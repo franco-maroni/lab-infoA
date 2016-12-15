@@ -1,13 +1,20 @@
-//
-//  main.c
-//  lab4es2
-//
-//  Created by Francesco Marconi on 12/11/16.
-//  Copyright © 2016 Francesco Marconi. All rights reserved.
-//
+/*
+ 
+ ESERCIZIO 3 (abaco ricorsivo)
+ Scrivere un programma che permetta di visualizzare un qualsiasi numero come un abaco:
+ eg. 1345
+ o
+ ooo
+ oooo
+ ooooo
+ 
+ Il programma continua a chiedere input fino all’inserimento di 0.
+ La scomposizione in abaco deve essere eseguita mediante funzione RICORSIVA.
+ */
 
 #include <stdio.h>
 void print_unario(int n);
+void print_unario_rec(int n);
 void abaco_rec(int n);
 void abaco_iter_rev(int n);
 void abaco_rec_rev(int n);
@@ -34,8 +41,8 @@ int main(int argc, const char * argv[]) {
 void abaco_rec(int n){
     if (n<=0) return;
     else{
-        abaco_rec((n - n%10)/10);
-        print_unario(n%10);
+        abaco_rec(n/10);
+        print_unario_rec(n%10);
         return;
     }
 }
@@ -44,8 +51,8 @@ void abaco_rec(int n){
 void abaco_rec_rev(int n){
     if (n<=0) return;
     else{
-        print_unario(n%10);
-        return abaco_rec_rev((n - n%10)/10);
+        print_unario_rec(n%10);
+        return abaco_rec_rev(n/10);
     }
 }
 
@@ -71,10 +78,9 @@ void abaco_iter(int n){
 void abaco_iter_rev(int n){
     while (n>0) {
         print_unario(n%10);
-        n = (n - n%10)/10;
+        n /= 10;
     }
 }
-
 
 void print_unario(int n){
     int i;
@@ -84,3 +90,13 @@ void print_unario(int n){
     printf("\n");
 }
 
+/* OPZIONALE: versione ricorsiva della stampa */
+void print_unario_rec(int n){
+    if(n==0)
+        printf("\n");
+    else{
+        printf("o");
+        print_unario_rec(n-1);
+    }
+    return;
+}

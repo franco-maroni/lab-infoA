@@ -1,10 +1,7 @@
-//
-//  main.c
-//  lab4es4
-//
-//  Created by Francesco Marconi on 12/12/16.
-//  Copyright © 2016 Francesco Marconi. All rights reserved.
-//
+/*
+ ESERCIZIO 2 (somma di array ricorsiva)
+ Scrivere una funzione ricorsiva che permetta di sommare due array; il primo array va considerato da 0 a n, mentre il secondo array da n a 0.
+ */
 
 #include <stdio.h>
 #define ARR_SIZE 4
@@ -14,8 +11,8 @@ void somma_array_iter(int x[], int y[], int z[]);
 void riempi_array(int *arr, int size);
 void print_array(int a[], int size);
 int main(int argc, const char * argv[]) {
-    int a[ARR_SIZE]; //= {1, 2, 3, 4};
-    int b[ARR_SIZE]; // = {1, 2, 3, 4};
+    int a[ARR_SIZE]; 
+    int b[ARR_SIZE];
     int c[ARR_SIZE] = {0, 0, 0, 0};
     // inserimento valori
     riempi_array(a, ARR_SIZE);
