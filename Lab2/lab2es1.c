@@ -1,112 +1,33 @@
+//
+//  lab2es1.c
+//  lab-infoA
+//
+//  Created by Francesco Marconi on 10/28/17.
+//  Copyright © 2017 Francesco Marconi. All rights reserved.
+//
 /*
-Lab 2 Es1.
-Scrivere un programma che legga un numero N ed un carattere C.
-Disegnare per mezzi di * e + il quadrato di lato N come riportato in seguito (caso N=5).
-C == 'f'
- *****
- *****
- *****
- *****
- *****
+ Es. 1
+ Scrivere un programma che, dato un anno inserito dall’utente come numero intero, dica se è bisestile o meno.
+ Esempio:
+	Inserisci anno: 1777
+	L’anno 1777 non e` bisestile!
  
-C == 'v'
- *****
- *   *
- *   *
- *   *
- *****
- 
-C == 'p'
- *++++
- **+++
- ***++
- ****+
- *****
- 
-C == 'h'
- *
- **
- ***
- ****
- *****
- 
-*/
+ Si ricorda che, secondo il calendario gregoriano, sono bisestili:
+ •	Gli anni non secolari il cui numero è divisibile per 4 (792, 1996, 2012)
+ •	Gli anni secolari il cui numero è divisibile per 400 (es 1200, 1600, 2000)
+ Questo significa gli anni secolari il cui numero non è divisibile per 400 (es 1900) non sono bisestili.
+ */
+
 #include <stdio.h>
 
-int main(int argc, const char * argv[]) {
-    int n;
-    char c;
-    
-    //Utilizzo cicli while annidati
-    //Definisco per tale ragione due contatori, uno per le linee e uno per le colonne.
-    
-    printf("Inserire la dimensione del quadrato da disegnare: ");
-    scanf("%d%*c",&n);
-    printf("Scegli che quadrato disegnare (f,v,p, h)");
-    scanf("%c",&c);
-    
-    
-    int riga;
-    int colonna;
 
-    switch (c) {
-        case 'f':
-            for (riga = 0; riga < n; riga++) {
-                for (colonna = 0; colonna < n; colonna++) {
-                    printf("*");
-                    if (colonna == n-1) {
-                        printf("\n");
-                    }
-                }
-                
-                }
-            break;
-        case 'v':
-            for (riga = 0; riga < n; riga++) {
-                for (colonna = 0; colonna < n; colonna++) {
-                    if (riga == 0 || riga == n-1 || colonna == 0 || colonna == n-1) {
-                        printf("*");
-                    }
-                    else {
-                        printf(" ");
-                    }
-                    if (colonna == n-1) {
-                        printf("\n");
-                    }
-                }
-            }
-            break;
-
-        case 'p':
-            for (riga = 0; riga < n; riga++) {
-                for (colonna = 0; colonna < n; colonna++) {
-                    if (riga >= colonna) {
-                        printf("*");
-                    }else{
-                        printf("+");
-                    }
-                    if (colonna == n-1) {
-                        printf("\n");
-                    }
-                }
-            }
-            break;
-
-        case 'h':
-            for (riga = 0; riga < n; riga++) {
-                for (colonna = 0; colonna < n; colonna++) {
-                    if (riga >= colonna) {
-                        printf("*");
-                    }
-                }
-                printf("\n");
-            }
-            break;
-    
-            
-        default:
-            break;
-    }
-    
-    return 0;
+int main(){
+    int anno;
+    printf("inserire anno:\n");
+    scanf("%d", & anno);
+    // (se l'anno è divisibile per 400) OR ((è divisibile per 4) AND (non è divisibile per 100))
+    if(!(anno%400) || (!(anno%4) && anno%100)){
+        printf("L'anno è bisestile\n");
+    }else
+        printf("L'anno non è bisestile\n");
 }
