@@ -20,6 +20,8 @@ int main(void) {
     
     while (primo && i <= n / 2) { // mi basta arrivare fino a n/2
         primo = n % i; // se la divisione intera non dà resto -> primo = 0 -> esco dal ciclo e concludo che il numero non è primo
+        printf("e' divisibile per %d? --> %s\n", i, (primo) ? "no" : "si");
+        i++;
     }
     
     /*
@@ -30,9 +32,9 @@ int main(void) {
     */
     
     if(!primo) {
-        printf("Il numero NON è primo\n");
+        printf("\nIl numero NON è primo!\n");
     } else {
-        printf("Il numero è primo\n");
+        printf("\nIl numero è primo!\n");
     }
     
     return 0;
